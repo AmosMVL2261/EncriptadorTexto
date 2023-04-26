@@ -1,0 +1,128 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+$white: #FFFFFF;
+$light-blue-100: #F3F5FC;
+$gray-400: hwb(210 29% 66%);
+$gray-500: #343A40;
+$light-blue-300: #D8DFE8;
+$dark-blue-300: #0A3871;
+
+* {
+    box-sizing: content-box;
+}
+
+body {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    background-color: $light-blue-100;
+    padding: 20px;
+}
+
+/* Header */
+
+.logo-container {
+    border: 1px solid red;
+    width: 30px;
+    height: 43.2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    color: $dark-blue-300;
+}
+
+/* Buttons section */
+
+.warning {
+    color: $gray-400;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 16px;
+    img {
+        margin-right: 8px;
+    }
+}
+
+button {
+    border-radius: 24px;
+    width: 290px;
+    height: 63px;
+}
+
+.button-principal {
+    color: $white;
+    background-color: $dark-blue-300;
+    border: 1px solid $dark-blue-300;
+}
+
+.button-secondary {
+    color: $dark-blue-300;
+    background-color: $light-blue-300;
+    border: 1px solid $dark-blue-300;
+
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 24px;
+}
+
+/* Two main sections contained here */
+
+.mainDisplay {
+    border: 1px solid red;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.finalMessageBox {
+    background-color: $white;
+    width: 370px;
+    height: 80vh;
+    min-width: fit-content;
+    min-height: 460px;
+    border-radius: 36px;
+    padding: 10px;
+}
+
+.finalBoxElements {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.finaltMessageTitle {
+    color: $gray-500;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    padding: 0 10px;
+}
+
+.finaltMessageDescription {
+    color: $gray-400;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    padding: 0 10px;
+}
+
+/* Media Queries */
+
+@media screen {
+    
+}
