@@ -1,6 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -11,12 +11,12 @@ body {
 
 /* Header */
 .logo-container {
-  border: 1px solid red;
   width: 30px;
   height: 43.2px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .logo {
@@ -25,7 +25,7 @@ body {
 
 /* Buttons section */
 .warning {
-  color: hwb(210 29% 66%);
+  color: #495057;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
@@ -40,8 +40,8 @@ body {
 
 button {
   border-radius: 24px;
-  width: 290px;
-  height: 63px;
+  width: 255px;
+  height: 56px;
 }
 
 .button-principal {
@@ -62,9 +62,17 @@ button {
   gap: 24px;
 }
 
+.existAgain {
+  /*Content restoration */
+  display: block;
+}
+
+.noExist {
+  display: none;
+}
+
 /* Two main sections contained here */
 .mainDisplay {
-  border: 1px solid red;
   width: 100%;
   height: 90%;
   display: flex;
@@ -75,12 +83,12 @@ button {
 
 .finalMessageBox {
   background-color: #FFFFFF;
-  width: 370px;
+  width: 350px;
   height: 80vh;
   min-width: fit-content;
   min-height: 460px;
   border-radius: 36px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .finalBoxElements {
@@ -91,7 +99,7 @@ button {
   gap: 15px;
 }
 
-.finaltMessageTitle {
+.finalMessageTitle {
   color: #343A40;
   text-align: center;
   font-weight: 700;
@@ -100,8 +108,8 @@ button {
   padding: 0 10px;
 }
 
-.finaltMessageDescription {
-  color: hwb(210 29% 66%);
+.finalMessageDescription {
+  color: #495057;
   text-align: center;
   font-weight: 400;
   font-size: 16px;
@@ -109,6 +117,52 @@ button {
   padding: 0 10px;
 }
 
+/* Text Area */
+textarea {
+  resize: none;
+  min-width: 370px;
+  width: 60vw;
+  height: 70vh;
+  padding: 5px;
+  border: 1px solid #343A40;
+  border-radius: 5px;
+}
+textarea:focus, textarea:active {
+  outline: 2px solid #0A3871;
+}
+
 /* Media Queries */
+/* Smartphones */
+@media only screen and (max-width: 640px) {
+  .buttonsContainer {
+    flex-wrap: wrap;
+  }
+  textarea {
+    height: 50vh;
+  }
+}
+/* Tablets */
+@media only screen and (max-width: 810px) {
+  .interactionSection {
+    margin: 20px 0;
+  }
+  .buttonsContainer {
+    display: flex;
+    justify-content: center;
+  }
+  textarea {
+    min-width: 150px;
+    width: calc(100vw - 40px);
+  }
+  .finalMessageBox {
+    width: calc(100vw - 40px);
+    min-height: 200px;
+    height: 200px;
+    justify-content: center;
+  }
+  #personPicture {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
