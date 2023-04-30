@@ -49,11 +49,44 @@ button {
   background-color: #0A3871;
   border: 1px solid #0A3871;
 }
+.button-principal:hover {
+  background-color: #356EA9;
+  transition: 200ms;
+}
+.button-principal:active {
+  background-color: #868E96;
+  transition: 50ms;
+}
 
 .button-secondary {
   color: #0A3871;
-  background-color: #D8DFE8;
+  background-color: #E9ECF8;
   border: 1px solid #0A3871;
+}
+.button-secondary:hover {
+  color: #FFFFFF;
+  background-color: #757FB2;
+  transition: 200ms;
+}
+.button-secondary:active {
+  background-color: #868E96;
+  transition: 50ms;
+}
+
+.button-copy {
+  color: #0A3871;
+  background-color: #F3F5FC;
+  border: 1px solid #0A3871;
+  margin: 16px 0;
+}
+.button-copy:hover {
+  color: #072B61;
+  background-color: #609ED4;
+  transition: 200ms;
+}
+.button-copy:active {
+  background-color: #356EA9;
+  transition: 50ms;
 }
 
 .buttonsContainer {
@@ -63,7 +96,6 @@ button {
 }
 
 .existAgain {
-  /*Content restoration */
   display: block;
 }
 
@@ -84,11 +116,20 @@ button {
 .finalMessageBox {
   background-color: #FFFFFF;
   width: 350px;
-  height: 80vh;
+  height: calc(80vh - 56px);
   min-width: fit-content;
-  min-height: 460px;
+  min-height: 470px;
   border-radius: 36px;
   padding: 20px;
+  white-space: normal;
+  overflow-x: unset;
+  overflow-y: auto;
+}
+
+.finalMessage {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 }
 
 .finalBoxElements {
@@ -115,6 +156,17 @@ button {
   font-size: 16px;
   line-height: 150%;
   padding: 0 10px;
+}
+
+.asideBar {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#personPicture {
+  width: 90%;
 }
 
 /* Text Area */
@@ -155,9 +207,11 @@ textarea:focus, textarea:active {
     width: calc(100vw - 40px);
   }
   .finalMessageBox {
+    min-width: 150px;
     width: calc(100vw - 40px);
-    min-height: 200px;
-    height: 200px;
+    max-width: calc(100vw - 40px);
+    min-height: 150px;
+    height: 300px;
     justify-content: center;
   }
   #personPicture {

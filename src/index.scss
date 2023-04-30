@@ -2,10 +2,20 @@
 
 $white: #FFFFFF;
 $light-blue-100: #F3F5FC;
+$light-blue-200: #EFF1FA;
+$light-blue-300: #E9ECF8;
+$light-blue-400: #AAB2D5;
+$light-blue-500: #757FB2;
+$gray-100: #CED4DA;
+$gray-200: #ADB5BD;
+$gray-300: #868E96;
 $gray-400: #495057;
 $gray-500: #343A40;
-$light-blue-300: #D8DFE8;
+$dark-blue-100: #609ED4;
+$dark-blue-200: #356EA9;
 $dark-blue-300: #0A3871;
+$dark-blue-400: #072B61;
+$dark-blue-500: #052051;
 
 * {
     box-sizing: border-box;
@@ -62,10 +72,48 @@ button {
 
 .button-principal {
     @include buttonStyle($textColor: $white, $bgColor: $dark-blue-300 );
+
+    &:hover {
+        background-color: $dark-blue-200;
+        transition: 200ms;
+    }
+
+    &:active {
+        background-color: $gray-300;
+        transition: 50ms;
+    }
 }
 
 .button-secondary {
     @include buttonStyle($textColor: $dark-blue-300, $bgColor: $light-blue-300 );
+
+    &:hover {
+        color: $white;
+        background-color: $light-blue-500;
+        transition: 200ms;
+    }
+
+    &:active {
+        background-color: $gray-300;
+        transition: 50ms;
+    }
+}
+
+.button-copy {
+    @include buttonStyle($textColor: $dark-blue-300, $bgColor: $light-blue-100 );
+
+    margin: 16px 0;
+
+    &:hover {
+        color: $dark-blue-400;
+        background-color: $dark-blue-100;
+        transition: 200ms;
+    }
+
+    &:active {
+        background-color: $dark-blue-200;
+        transition: 50ms;
+    }
 }
 
 .buttonsContainer {
@@ -75,7 +123,6 @@ button {
 }
 
 .existAgain {
-    /*Content restoration */
     display: block;
 }
 
@@ -98,11 +145,20 @@ button {
 .finalMessageBox {
     background-color: $white;
     width: 350px;
-    height: 80vh;
+    height: calc(80vh - 56px);
     min-width: fit-content;
-    min-height: 460px;
+    min-height: 470px;
     border-radius: 36px;
     padding: 20px;
+    white-space: normal;
+    overflow-x: unset;
+    overflow-y: auto;
+}
+
+.finalMessage {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
 }
 
 .finalBoxElements {
@@ -129,6 +185,17 @@ button {
     font-size: 16px;
     line-height: 150%;
     padding: 0 10px;
+}
+
+.asideBar {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#personPicture {
+    width: 90%;
 }
 
 /* Text Area */
@@ -181,9 +248,11 @@ textarea {
     }
 
     .finalMessageBox {
+        min-width: 150px;
         width: calc(100vw - 40px);
-        min-height: 200px;
-        height: 200px;
+        max-width: calc(100vw - 40px);
+        min-height: 150px;
+        height: 300px;
         justify-content: center;
     }
 
