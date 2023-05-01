@@ -3,11 +3,11 @@
  * Hola como esta usted informacion
  * Hoberlai cobermober enterstai ufatstenterd imesnfoberrmaicimesobern
 */
-
+/*
 function validText(text) {
 
 }
-
+*/
 function clean(text) {
     // If there isn't an input return and do nothing
     if(text.length<=0){
@@ -40,7 +40,7 @@ async function copyText() {
 
 function encrypt() {
     // Check if it is a valid text
-    validText();
+    //validText();
     // Regular expression to look for vocals
     const regex = /[aeiou]/gm;
     // This dictionary have all the crypted vocals equivalents
@@ -62,7 +62,7 @@ function encrypt() {
 
 function decrypt() {
     // Check if it is a valid text
-    validText();
+    //validText();
     // Regular expression to look for crypted vocals
     const regex = /(ai)|(enter)|(imes)|(ober)|(ufat)/gm;
     // This dictionary have all the normal vocals vocals equivalents
