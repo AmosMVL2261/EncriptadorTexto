@@ -3,11 +3,17 @@
  * Hola como esta usted informacion
  * Hoberlai cobermober enterstai ufatstenterd imesnfoberrmaicimesobern
 */
-/*
-function validText(text) {
 
+function validText(text) {
+    let regex = /(?=.*?[^a-z0-9\s])/g
+    if(regex.test(text)){
+        return true
+    }else {
+        return false
+    }
 }
-*/
+
+
 function clean(text) {
     // If there isn't an input return and do nothing
     if(text.length<=0){
@@ -39,14 +45,17 @@ async function copyText() {
 }
 
 function encrypt() {
-    // Check if it is a valid text
-    //validText();
     // Regular expression to look for vocals
     const regex = /[aeiou]/gm;
     // This dictionary have all the crypted vocals equivalents
     const coincidence = { "a" : "ai", "e" : "enter", "i" : "imes", "o" : "ober", "u" : "ufat", }
     const textbox = document.getElementById("text");
     const text = textbox.value;
+    // Check if it is a valid text
+    if(validText(text)){
+        alert("El mensaje no debe de contener ni letras mayusculas ni caracteres especiales")
+        return;
+    };
     // Hide elements
     if(!clean(text)) {
         return;
@@ -61,14 +70,17 @@ function encrypt() {
 }
 
 function decrypt() {
-    // Check if it is a valid text
-    //validText();
     // Regular expression to look for crypted vocals
-    const regex = /(ai)|(enter)|(imes)|(ober)|(ufat)/gm;
+    const regex = /ai|enter|imes|ober|ufat/gm;
     // This dictionary have all the normal vocals vocals equivalents
     const coincidence = {"ai" : "a", "enter" : "e", "imes" : "i", "ober" : "o", "ufat" : "u", }
     const textbox = document.getElementById("text");
     const text = textbox.value;
+    // Check if it is a valid text
+    if(validText(text)){
+        alert("El mensaje no debe de contener ni letras mayusculas ni caracteres especiales")
+        return;
+    };
     // Hide elements
     if(!clean(text)) {
         return;
